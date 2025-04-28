@@ -1,70 +1,129 @@
-# Getting Started with Create React App
+# GestureAI: Sign Language Interpreter
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<div align="center">
+  <img src="/placeholder.svg?height=200&width=200&query=sign language interpretation with AI" alt="GestureAI Logo" />
+  <h3>AI-Powered Gesture Recognition & Sign Language Interpretation</h3>
+</div>
 
-## Available Scripts
+## 📋 Overview
 
-In the project directory, you can run:
+GestureAI is a comprehensive web application that combines real-time gesture recognition with advanced sign language interpretation capabilities. Using TensorFlow.js for hand tracking and Google's Gemini AI for interpretation, this application bridges communication gaps by translating sign language into text and providing learning resources for sign language.
 
-### `npm start`
+## ✨ Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 🖐️ Gesture Recognition
+- Real-time hand tracking and gesture detection
+- Recognition of common gestures (thumbs up, peace sign)
+- Visual feedback with color-coded hand landmarks
+- Gesture history tracking
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 🤟 Sign Language Interpretation
+- Record and interpret sign language videos
+- Real-time sign language detection and translation
+- Learning modules for ASL (American Sign Language)
+- Practice mode with feedback
 
-### `npm test`
+### 📷 Image Processing
+- QR code-based phone-to-computer image transfer
+- Text extraction from images using OCR
+- PDF generation from extracted text
+- AI-powered content analysis
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🛠️ Technologies
 
-### `npm run build`
+- **Frontend**: React.js
+- **AI Models**: 
+  - TensorFlow.js & Handpose for gesture recognition
+  - Google Gemini AI for interpretation
+  - Tesseract.js for OCR
+- **Video Processing**: MediaRecorder API, Canvas
+- **PDF Generation**: jsPDF
+- **Styling**: Tailwind CSS, shadcn/ui components
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 📦 Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/yourusername/gesture-ai.git
+   cd gesture-ai
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. **Install dependencies**
+```bash
+    npm install
+```
 
-### `npm run eject`
+3. **Set up environment variable**
+```bash
+    REACT_APP_GEMINI_API_KEY=your_gemini_api_key_here
+```
+4. **Start development server**
+```bash
+    npm start
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+gesture-ai/
+├── public/
+│   └── images/
+├── src/
+│   ├── components/
+│   │   ├── ui/
+│   │   ├── SignLanguageDetector.js
+│   │   ├── SignInterpreterOptimized.js
+│   │   ├── VideoRecorder.js
+│   │   └── ...
+│   ├── pages/
+│   │   ├── SignLanguagePage.js
+│   │   └── ImageProcessorPage.js
+│   ├── services/
+│   │   ├── GeminiService.js
+│   │   ├── HandTrackingService.js
+│   │   └── ...
+│   ├── utils/
+│   │   ├── videoUtils.js
+│   │   └── ...
+│   ├── styles/
+│   ├── App.js
+│   └── index.js
+├── package.json
+└── README.md
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Usage
+### Gesture Recognition
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+    - Navigate to the Gesture Recognition tab
+    - Allow camera access when prompted
+    - Click "Start Detection" to begin tracking hand gestures
+    - Make a thumbs up or peace sign gesture to trigger automatic capture
+    - View the AI's interpretation of your gesture
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Sign Language Interpreter
+```bash
+Navigate to the Sign Language tab
+Choose between "Communicate", "Learn Sign Language", or "Record & Interpret"
+For recording:
 
-## Learn More
+- Click "Start Recording"
+- Perform sign language gestures
+- Click "Stop Recording"
+- View the interpretation
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🧠 How It Works
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Hand Tracking Pipeline
 
-### Code Splitting
+1. **Detection**: TensorFlow.js and Handpose model detect hand landmarks
+2. **Gesture Recognition**: Fingerpose library identifies specific gestures
+3. **Visualization**: Canvas overlay draws color-coded landmarks and connections
+4. **Analysis**: Detected gestures are sent to Gemini AI for interpretation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+### Sign Language Interpretation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. **Video Recording**: Capture sign language video using MediaRecorder API
+2. **Frame Extraction**: Extract key frames from the video
+3. **AI Analysis**: Send frames to Gemini Vision API with specialized prompts
+4. **Interpretation**: Process and display the AI's interpretation
