@@ -61,6 +61,10 @@ GestureAI is a comprehensive web application that combines real-time gesture rec
 ```bash
     npm start
 ```
+## 📁 Project Structure
+
+```bash
+
 
 gesture-ai/
 ├── public/
@@ -87,6 +91,7 @@ gesture-ai/
 │   └── index.js
 ├── package.json
 └── README.md
+```
 
 # Usage
 ### Gesture Recognition
